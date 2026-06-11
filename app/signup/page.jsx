@@ -16,7 +16,7 @@ export default function GetStarted() {
       >
         Login
       </Link>
-      <div className="h-screen flex justify-center items-center w-full p-10 m-auto">
+      <div className="h-screen flex justify-center items-center w-full p-10 m-auto text-white">
         <SignUp />
       </div>
     </div>
