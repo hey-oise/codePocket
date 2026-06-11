@@ -1,4 +1,3 @@
-import { UserAvatar } from "@stackframe/stack";
 import Link from "next/link";
 
 export default function App() {
@@ -27,7 +26,6 @@ export default function App() {
         >
           Buy me a coffee ☕
         </a>
-        <UserAvatar />
       </div>
     </div>
   );
