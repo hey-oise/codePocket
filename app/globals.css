@@ -21,7 +21,7 @@
 
 body {
     color-scheme: dark;
-    font-famrily:
+    font-family:
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
@@ -34,7 +34,7 @@ body {
         "Helvetica Neue",
         sans-serif;
 
-    font-family: "Source Code Pro", monospace;
+    font-fafmily: "Source Code Pro", monospace;
 }
 .background {
     background: linear-gradient(-45deg, #283593, #0c1657, #2071bf, #070b26);
