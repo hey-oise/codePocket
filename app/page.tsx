@@ -24,7 +24,7 @@ export default function App() {
           href={" https://buymeacoffee.com/oisegiwaokn"}
           target="_blank"
         >
-          Buy me a coffee ☕
+          buyMeACoffee
         </a>
       </div>
     </div>
