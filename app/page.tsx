@@ -19,18 +19,18 @@ export default function App() {
       </h2>
       <div className="flex flex-row gap-2">
         <Link
-          className="border border-gray-600 p-2 rounded-lg bg-blue-800 hover:bg-blue-900 transition-all cursor-pointer"
+          className="text-white border border-gray-600 p-2 rounded-lg bg-blue-800 hover:bg-blue-900 transition-all cursor-pointer capitalize"
           href={"/signup"}
         >
           Get started
         </Link>
 
         <a
-          className="border border-gray-400 p-2 rounded-lg  hover:bg-blue-800 hover:text-black transition-all cursor-pointer"
+          className="border border-gray-400 p-2 rounded-lg  hover:bg-blue-800 text-white transition-all cursor-pointer capitalize"
           href={" https://buymeacoffee.com/oisegiwaokn"}
           target="_blank"
         >
-          buyMeACoffee
+          buy Me A Coffee
         </a>
       </div>
     </div>
