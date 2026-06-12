@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-    --background: black;
-    --foreground: #070b26;
+    --primary: #101828; /* Your brand color */
+    --card: 0 0% 100%;
+    --radius: 0.5rem;
 }
 
 @theme inline {

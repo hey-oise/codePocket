@@ -25,10 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="dark">
       <head></head>
       <body className="dark min-h-full flex flex-col bg-gray-900">
         <StackProvider app={stackServerApp}>

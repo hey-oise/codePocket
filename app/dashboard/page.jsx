@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
 import Loading from "../loading";
-import { user } from "../user";
+import user from "../user";
 import { redirect } from "next/navigation";
 import SideBar from "../components/sideBar";
 
-if (!user) {
-  redirect("/");
-}
 export default function Dashboard() {
   const [isDashLoading, setDashLoading] = useState(false);
+
+  if (!user()) {
+    redirect("/");
+  }
   return (
     <div className="bg-gray-900 min-h-screen pl-60">
       <SideBar currentRoute={"dashboard"} />
