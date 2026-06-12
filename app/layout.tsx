@@ -30,8 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head></head>
-      <body className="min-h-full flex flex-col">
-        <div className="background"></div>
+      <body className="dark min-h-full flex flex-col bg-gray-900">
         <StackProvider app={stackServerApp}>
           <StackTheme>{children}</StackTheme>
         </StackProvider>

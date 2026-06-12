@@ -9,11 +9,11 @@ if (!user) {
   redirect("/");
 }
 export default function Dashboard() {
-  const [isLoading, setLoading] = useState(true);
+  const [isDashLoading, setDashLoading] = useState(false);
   return (
-    <div className="bg-gray-800 min-h-screen pl-60">
+    <div className="bg-gray-900 min-h-screen pl-60">
       <SideBar currentRoute={"dashboard"} />
-      {isLoading ? (
+      {isDashLoading ? (
         <Loading />
       ) : (
         <>
