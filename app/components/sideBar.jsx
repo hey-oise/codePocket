@@ -3,7 +3,6 @@
 import { UserAvatar, UserButton } from "@stackframe/stack";
 import { MenuIcon } from "lucide-react";
 import { X } from "lucide-react";
-import { MenuSquareIcon } from "lucide-react";
 import { Clipboard, Code, Code2, Home, Library } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -64,8 +63,8 @@ export default function SideBar({ currentRoute }) {
         className={`${sideBar} md:flex flex-col justify-between gap-10 py-8 bg-gray-950 w-50 p-2 rounded-lg fixed left-1 top-1 bottom-1 text-white max-h-screen z-24`}
       >
         <div className="flex flex-col gap-10">
-          <p className="capitalize font-bold text-1xl text-gray-400 flex flex-row gap-0">
-            <Code2 className="w-10" />
+          <p className="capitalize font-bold text-1xl text-gray-400 flex flex-row gap-2 items-center pl-2">
+            <Code2 size={25} />
             code Pocket
           </p>
           <div className="flex flex-col gap-4 capitalise">
