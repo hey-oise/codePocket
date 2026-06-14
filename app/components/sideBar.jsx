@@ -56,7 +56,7 @@ export default function SideBar({ currentRoute }) {
               setSideBar("hidden");
             }
           }}
-          className="fixed top-0 left-0 right-0 bottom-0 bg-white backdrop-blur-2xl"
+          className="fixed top-0 left-0 right-0 bottom-0  backdrop-blur-2xl"
         />
       )}
       <div
