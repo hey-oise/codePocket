@@ -63,7 +63,7 @@ export default function Dashboard() {
                 top languages
               </p>
               <div className="flex flex-col gap-2 items-center">
-                <StatChart language="jsvascript" percent={35} />
+                <StatChart language="javascript" percent={35} />
                 <StatChart language="python" percent={25} />
                 <StatChart language="rust" percent={34} />
                 <StatChart language="others" percent={6} />
