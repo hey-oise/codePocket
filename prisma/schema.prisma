@@ -17,6 +17,7 @@ model User {
   email    String     @unique
   name     String?
   snippets Snippets[]
+  playground Playground[]
 }
 
 model Snippets {
@@ -30,4 +31,16 @@ model Snippets {
   updatedAt   DateTime @updatedAt
   language    String
   isPublic    Boolean  @default(false)
+}
+model Playground {
+title       String
+description String?
+content     String
+id          Int      @id @default(autoincrement())
+author      User     @relation(fields: [authorId], references: [id])
+authorId    String
+createdAt   DateTime @default(now())
+updatedAt   DateTime @updatedAt
+language    String
+isPublic    Boolean  @default(false)
 }

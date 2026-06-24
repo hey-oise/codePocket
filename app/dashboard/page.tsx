@@ -31,7 +31,7 @@ function StatChart({
 }
 export default async function Dashboard() {
   authHandle();
-  const user =  getUser();
+  const user = await getUser();
   return (
     <div className="bg-gray-900 min-h-screen pl-0 justify-center align-middle md:pl-60">
       <Sidebar currentRoute={"dashboard"} />

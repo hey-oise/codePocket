@@ -7,7 +7,7 @@ import { Clipboard, Code, Code2, Home, Library } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SideBar({ currentRoute }) {
+export default function SideBar({ currentRoute = 'dashboard'} ) {
   const [sideBar, setSideBar] = useState("hidden");
   const links = [
     {

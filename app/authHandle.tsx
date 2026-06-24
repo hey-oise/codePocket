@@ -10,12 +10,12 @@ export async function authHandle() {
   await prisma.user.upsert({
     where: { id: user.id },
     update: {
-      email: user.primaryEmail,
+      email: user.primaryEmail ?? '',
       name: user.displayName,
     },
     create: {
       id: user.id,
-      email: user.primaryEmail,
+      email: user.primaryEmail ?? '',
       name: user.displayName,
     },
   });
