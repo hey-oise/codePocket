@@ -1,5 +1,6 @@
 import Sidebar from "../components/sideBar";
 import { authHandle } from "../authHandle";
+import { getUser } from "../getUser";
 
 function StatChart({
   language = "others",
@@ -28,8 +29,9 @@ function StatChart({
     </>
   );
 }
-export default function Dashboard() {
+export default async function Dashboard() {
   authHandle();
+  const user =  getUser();
   return (
     <div className="bg-gray-900 min-h-screen pl-0 justify-center align-middle md:pl-60">
       <Sidebar currentRoute={"dashboard"} />
@@ -40,7 +42,7 @@ export default function Dashboard() {
         <div className="flex flex-col w-fit gap-10 m-auto">
           <div className="flex flex-row gap-15">
             <p className="text-center text-blue-400 capitalize font-semibold">
-              24 <br /> snippets
+              {user?.snippets?.length ?? 0} <br /> snippets
             </p>
             <p className="text-center text-green-200 capitalize font-semibold">
               12 <br /> playgrounds
