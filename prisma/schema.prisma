@@ -5,9 +5,29 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  output = "./generated"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model User {
+  id       String     @id
+  email    String     @unique
+  name     String?
+  snippets Snippets[]
+}
+
+model Snippets {
+  title       String
+  description String?
+  content     String
+  id          Int      @id @default(autoincrement())
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  language    String
+  isPublic    Boolean  @default(false)
 }
