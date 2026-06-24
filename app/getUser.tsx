@@ -11,6 +11,7 @@ export async function getUser() {
       id: user?.id,
     }, include: {
       snippets: true,
+      playground: true,
     }
   })
 }

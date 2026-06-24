@@ -51,3 +51,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type Snippets = Prisma.SnippetsModel
+/**
+ * Model Playground
+ * 
+ */
+export type Playground = Prisma.PlaygroundModel

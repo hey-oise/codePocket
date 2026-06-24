@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  Snippets: 'Snippets'
+  Snippets: 'Snippets',
+  Playground: 'Playground'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -93,6 +94,21 @@ export const SnippetsScalarFieldEnum = {
 } as const
 
 export type SnippetsScalarFieldEnum = (typeof SnippetsScalarFieldEnum)[keyof typeof SnippetsScalarFieldEnum]
+
+
+export const PlaygroundScalarFieldEnum = {
+  title: 'title',
+  description: 'description',
+  content: 'content',
+  id: 'id',
+  authorId: 'authorId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  language: 'language',
+  isPublic: 'isPublic'
+} as const
+
+export type PlaygroundScalarFieldEnum = (typeof PlaygroundScalarFieldEnum)[keyof typeof PlaygroundScalarFieldEnum]
 
 
 export const SortOrder = {

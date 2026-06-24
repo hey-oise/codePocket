@@ -385,7 +385,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  Snippets: 'Snippets'
+  Snippets: 'Snippets',
+  Playground: 'Playground'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +402,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "snippets"
+    modelProps: "user" | "snippets" | "playground"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -553,6 +554,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Playground: {
+      payload: Prisma.$PlaygroundPayload<ExtArgs>
+      fields: Prisma.PlaygroundFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PlaygroundFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PlaygroundFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        findFirst: {
+          args: Prisma.PlaygroundFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PlaygroundFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        findMany: {
+          args: Prisma.PlaygroundFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>[]
+        }
+        create: {
+          args: Prisma.PlaygroundCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        createMany: {
+          args: Prisma.PlaygroundCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PlaygroundCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>[]
+        }
+        delete: {
+          args: Prisma.PlaygroundDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        update: {
+          args: Prisma.PlaygroundUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        deleteMany: {
+          args: Prisma.PlaygroundDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PlaygroundUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PlaygroundUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>[]
+        }
+        upsert: {
+          args: Prisma.PlaygroundUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlaygroundPayload>
+        }
+        aggregate: {
+          args: Prisma.PlaygroundAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePlayground>
+        }
+        groupBy: {
+          args: Prisma.PlaygroundGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlaygroundGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PlaygroundCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlaygroundCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -614,6 +689,21 @@ export const SnippetsScalarFieldEnum = {
 } as const
 
 export type SnippetsScalarFieldEnum = (typeof SnippetsScalarFieldEnum)[keyof typeof SnippetsScalarFieldEnum]
+
+
+export const PlaygroundScalarFieldEnum = {
+  title: 'title',
+  description: 'description',
+  content: 'content',
+  id: 'id',
+  authorId: 'authorId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  language: 'language',
+  isPublic: 'isPublic'
+} as const
+
+export type PlaygroundScalarFieldEnum = (typeof PlaygroundScalarFieldEnum)[keyof typeof PlaygroundScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -820,6 +910,7 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   snippets?: Prisma.SnippetsOmit
+  playground?: Prisma.PlaygroundOmit
 }
 
 /* Types for Logging */

@@ -45,7 +45,7 @@ export default async function Dashboard() {
               {user?.snippets?.length ?? 0} <br /> snippets
             </p>
             <p className="text-center text-green-200 capitalize font-semibold">
-              12 <br /> playgrounds
+              {user?.playground?.length ?? 0} <br /> playgrounds
             </p>
           </div>
         </div>

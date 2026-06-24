@@ -10,4 +10,5 @@
  */
 export type * from './models/User'
 export type * from './models/Snippets'
+export type * from './models/Playground'
 export type * from './commonInputTypes'

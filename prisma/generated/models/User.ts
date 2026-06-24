@@ -167,6 +167,7 @@ export type UserWhereInput = {
   email?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringNullableFilter<"User"> | string | null
   snippets?: Prisma.SnippetsListRelationFilter
+  playground?: Prisma.PlaygroundListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -174,6 +175,7 @@ export type UserOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   snippets?: Prisma.SnippetsOrderByRelationAggregateInput
+  playground?: Prisma.PlaygroundOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -184,6 +186,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   name?: Prisma.StringNullableFilter<"User"> | string | null
   snippets?: Prisma.SnippetsListRelationFilter
+  playground?: Prisma.PlaygroundListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -209,6 +212,7 @@ export type UserCreateInput = {
   email: string
   name?: string | null
   snippets?: Prisma.SnippetsCreateNestedManyWithoutAuthorInput
+  playground?: Prisma.PlaygroundCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -216,6 +220,7 @@ export type UserUncheckedCreateInput = {
   email: string
   name?: string | null
   snippets?: Prisma.SnippetsUncheckedCreateNestedManyWithoutAuthorInput
+  playground?: Prisma.PlaygroundUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUpdateInput = {
@@ -223,6 +228,7 @@ export type UserUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snippets?: Prisma.SnippetsUpdateManyWithoutAuthorNestedInput
+  playground?: Prisma.PlaygroundUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -230,6 +236,7 @@ export type UserUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snippets?: Prisma.SnippetsUncheckedUpdateManyWithoutAuthorNestedInput
+  playground?: Prisma.PlaygroundUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -295,16 +302,32 @@ export type UserUpdateOneRequiredWithoutSnippetsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSnippetsInput, Prisma.UserUpdateWithoutSnippetsInput>, Prisma.UserUncheckedUpdateWithoutSnippetsInput>
 }
 
+export type UserCreateNestedOneWithoutPlaygroundInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPlaygroundInput, Prisma.UserUncheckedCreateWithoutPlaygroundInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPlaygroundInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPlaygroundNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPlaygroundInput, Prisma.UserUncheckedCreateWithoutPlaygroundInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPlaygroundInput
+  upsert?: Prisma.UserUpsertWithoutPlaygroundInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPlaygroundInput, Prisma.UserUpdateWithoutPlaygroundInput>, Prisma.UserUncheckedUpdateWithoutPlaygroundInput>
+}
+
 export type UserCreateWithoutSnippetsInput = {
   id: string
   email: string
   name?: string | null
+  playground?: Prisma.PlaygroundCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutSnippetsInput = {
   id: string
   email: string
   name?: string | null
+  playground?: Prisma.PlaygroundUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutSnippetsInput = {
@@ -327,12 +350,58 @@ export type UserUpdateWithoutSnippetsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  playground?: Prisma.PlaygroundUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSnippetsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  playground?: Prisma.PlaygroundUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutPlaygroundInput = {
+  id: string
+  email: string
+  name?: string | null
+  snippets?: Prisma.SnippetsCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutPlaygroundInput = {
+  id: string
+  email: string
+  name?: string | null
+  snippets?: Prisma.SnippetsUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutPlaygroundInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPlaygroundInput, Prisma.UserUncheckedCreateWithoutPlaygroundInput>
+}
+
+export type UserUpsertWithoutPlaygroundInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPlaygroundInput, Prisma.UserUncheckedUpdateWithoutPlaygroundInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPlaygroundInput, Prisma.UserUncheckedCreateWithoutPlaygroundInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPlaygroundInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPlaygroundInput, Prisma.UserUncheckedUpdateWithoutPlaygroundInput>
+}
+
+export type UserUpdateWithoutPlaygroundInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  snippets?: Prisma.SnippetsUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPlaygroundInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  snippets?: Prisma.SnippetsUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 
@@ -342,10 +411,12 @@ export type UserUncheckedUpdateWithoutSnippetsInput = {
 
 export type UserCountOutputType = {
   snippets: number
+  playground: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   snippets?: boolean | UserCountOutputTypeCountSnippetsArgs
+  playground?: boolean | UserCountOutputTypeCountPlaygroundArgs
 }
 
 /**
@@ -365,12 +436,20 @@ export type UserCountOutputTypeCountSnippetsArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.SnippetsWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPlaygroundArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlaygroundWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
   name?: boolean
   snippets?: boolean | Prisma.User$snippetsArgs<ExtArgs>
+  playground?: boolean | Prisma.User$playgroundArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -395,6 +474,7 @@ export type UserSelectScalar = {
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   snippets?: boolean | Prisma.User$snippetsArgs<ExtArgs>
+  playground?: boolean | Prisma.User$playgroundArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -404,6 +484,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   name: "User"
   objects: {
     snippets: Prisma.$SnippetsPayload<ExtArgs>[]
+    playground: Prisma.$PlaygroundPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -804,6 +885,7 @@ readonly fields: UserFieldRefs;
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   snippets<T extends Prisma.User$snippetsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$snippetsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SnippetsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  playground<T extends Prisma.User$playgroundArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$playgroundArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlaygroundPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1250,6 +1332,30 @@ export type User$snippetsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.SnippetsScalarFieldEnum | Prisma.SnippetsScalarFieldEnum[]
+}
+
+/**
+ * User.playground
+ */
+export type User$playgroundArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Playground
+   */
+  select?: Prisma.PlaygroundSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Playground
+   */
+  omit?: Prisma.PlaygroundOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PlaygroundInclude<ExtArgs> | null
+  where?: Prisma.PlaygroundWhereInput
+  orderBy?: Prisma.PlaygroundOrderByWithRelationInput | Prisma.PlaygroundOrderByWithRelationInput[]
+  cursor?: Prisma.PlaygroundWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PlaygroundScalarFieldEnum | Prisma.PlaygroundScalarFieldEnum[]
 }
 
 /**
