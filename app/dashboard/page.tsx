@@ -56,6 +56,7 @@ export default async function Dashboard() {
             <StatChart language="rust" percent={34} />
             <StatChart language="others" percent={6} />
           </div>
+          
         </div>
       </div>
     </div>

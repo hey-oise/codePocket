@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head></head>
-      <body className="dark min-h-full flex flex-col bg-gray-900">
+      <body className="dark min-h-full flex flex-col bg-gray-900 text-gray-200">
         <StackProvider app={stackServerApp}>
           <StackTheme>{children}</StackTheme>
         </StackProvider>
