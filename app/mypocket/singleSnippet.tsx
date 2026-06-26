@@ -47,7 +47,7 @@ export default function SnippetSingle({ data }: { data: Snippet }) {
             <div className="flex bg-gray-950 p-5 rounded-lg mt-10 mb-5 justify-between">
               <pre className="max-w-200 text-wrap">{data?.content}</pre>
               {isCopied == true ? (
-                <button className="flex bg-green-900 p-1 rounded-md items-center h-fit">
+                <button className="flex bg-green-900 p-2 rounded-md items-center h-fit">
                   Copied! <LucideClipboardCheck size={17} />
                 </button>
               ) : (
