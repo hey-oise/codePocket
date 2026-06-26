@@ -15,10 +15,10 @@ export default function NewSnippet() {
         const content = data.get("content") as string;
         const language = data.get("language") as string;
         const isPublic = data.get("visibility") === 'true' ? true : false;
-        redirect("/mypocket");
 
         await createSnippet(name, description, content, language, isPublic);
 
+        redirect("/mypocket");
         
       }}
     >
