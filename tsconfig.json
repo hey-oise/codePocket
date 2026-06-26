@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/mypocket/Snippets.tsx"  ],
   "exclude": ["node_modules"]
 }
