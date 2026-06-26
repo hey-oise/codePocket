@@ -17,7 +17,9 @@ export default function NewSnippet() {
         const isPublic = data.get("visibility") === 'true' ? true : false;
 
         await createSnippet(name, description, content, language, isPublic);
+
         redirect("/mypocket");
+        
       }}
     >
       <Link className="fixed top-4 left-4" title={"back"} href={"/mypocket"}>
